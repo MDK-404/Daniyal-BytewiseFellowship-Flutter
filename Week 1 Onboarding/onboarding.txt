@@ -1,0 +1,9 @@
+Byte Wise Fellow Ship (Flutter)
+Summary of First Week
+Assalam o Alaikum! I am Muhammad Daniyal Khan. 
+First, I am very glad to join this fellowship. This fellow ship program is designed to help us develop our skills and advance to next level. With the help of my Team Lead, and with my hard work and dedication I will able to make significant progress in no time.
+In my First week of fellowship Firstly, I fill a google form, which was shared by our lead in which we have to fill our personal details, expertise level at flutter, and link of GitHub Repository .In this form I select my expert level as beginner. In our team there are three kinds of people some are beginners some are intermediate and some are working on flutter on advance projects so our lead decide to take us separately and give us separate task according to our expertise level.
+I created my account on GitHub and setup a repository where I have to share my weekly task.
+Setting up a repository on GitHub is an excellent way to track your progress and share your work with others in the program.
+In first week, we had a meeting with our Team Lead in which he tell us about Byte Wise and complete track of our fellowship. Byte wise will track over progress through the program and if someone is not taking it serious they will remove them from fellowship
+
