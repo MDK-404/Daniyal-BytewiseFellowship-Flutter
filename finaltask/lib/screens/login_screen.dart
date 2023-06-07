@@ -55,18 +55,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 isPass: true,
               ),
               const SizedBox(height: 24),
-              Container(
-                child: const Text('Login'),
-                width: double.infinity,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(vertical:12),
-                decoration: const ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(4),
-                      )
-                    ),
-                  color: blueColor
+              InkWell(
+                child: Container(
+                  child: const Text('Login'),
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.symmetric(vertical:12),
+                  decoration: const ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(4),
+                        )
+                      ),
+                    color: blueColor
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
@@ -81,15 +83,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     vertical: 8,
                   ),
                 ),
-                  Container(
-                    child: Text(
-                      "Sign up.",
-                      style:TextStyle(
-                      fontWeight: FontWeight.bold,
-                      )
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
+                  GestureDetector(
+                    onTap:(){
+
+                    } ,
+                    child: Container(
+                      child: Text(
+                        "Sign up.",
+                        style:TextStyle(
+                        fontWeight: FontWeight.bold,
+                        )
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8,
+                      ),
                     ),
                   ),
               ],

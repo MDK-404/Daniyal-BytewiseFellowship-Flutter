@@ -1,4 +1,5 @@
 import 'package:finaltask/screens/login_screen.dart';
+import 'package:finaltask/screens/signup_screen.dart';
 import 'package:finaltask/utils/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
       //   mobileScreenLayout: MobileScreenLayout(),
       //   webScreenLayout:WebScreenLayout(),
       // ),
-      home: LoginScreen(),
+      home: SignupScreen(),
     );
   }
 }
