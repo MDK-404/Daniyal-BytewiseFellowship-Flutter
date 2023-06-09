@@ -21,7 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   Uint8List? _image;
-
+  bool _isLoading=false;
   @override
   void dispose() {
     // TODO: implement dispose
@@ -38,7 +38,26 @@ class _SignupScreenState extends State<SignupScreen> {
       _image = im;
     });
   }
+  void signUpUser() async{
+    setState(() {
+      _isLoading=true;
+    });
+    String result = await AuthMethods().signUpUser(
+      email: _emailController.text,
+      password: _passwordController.text,
+      username: _usernameController.text,
+      bio: _bioController.text,
+      file: _image!,
+    );
+    setState(() {
+      _isLoading=false;
+    });
+    if(result!='success'){
+      showSnackBar(result, context);
+    }
 
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,18 +124,15 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             const SizedBox(height: 24),
             InkWell(
-              onTap: () async {
-                String result = await AuthMethods().signUpUser(
-                  email: _emailController.text,
-                  password: _passwordController.text,
-                  username: _usernameController.text,
-                  bio: _bioController.text,
-                  file: _image!,
-                );
-                print(result);
-              },
+              onTap: signUpUser,
               child: Container(
-                child: const Text('Signup'),
+                child: _isLoading
+                    ? const Center(
+                    child: CircularProgressIndicator(
+                      color: primaryColor,
+                    ),
+                )
+                    :const Text('Signup'),
                 width: double.infinity,
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(vertical: 12),

@@ -11,3 +11,10 @@ XFile? _file= await _imagePicker.pickImage(source: source);
  }
  print('No image Selected');
 }
+
+showSnackBar(String content, BuildContext context){
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(content),
+    ),
+  );
+}

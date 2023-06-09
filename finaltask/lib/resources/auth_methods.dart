@@ -40,13 +40,34 @@ class AuthMethods{
        //
 
 
+
          result="success";
       }
-    } catch(err){
+    }
+    catch(err){
       result=err.toString();
     }
     return result;
   }
 
+// logigng in user
+Future<String> loginUser({
+    required String email,
+    required String password,
+}) async {
+    String result="Some error occured";
 
+    try {
+      if(email.isNotEmpty || password.isNotEmpty){
+       await _auth.signInWithEmailAndPassword(email: email, password: password);
+      result ="success";
+      } else{
+        result="Please enter all the fields";
+      }
+    }  
+    catch(err){
+      result=err.toString();
+    }
+    return result;
+}
 }
