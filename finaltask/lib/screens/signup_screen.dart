@@ -21,7 +21,9 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   Uint8List? _image;
+
   bool _isLoading=false;
+
   @override
   void dispose() {
     // TODO: implement dispose
@@ -38,6 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
       _image = im;
     });
   }
+
   void signUpUser() async{
     setState(() {
       _isLoading=true;
@@ -58,6 +61,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
 
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -41,6 +41,7 @@ class AuthMethods{
 
 
 
+
          result="success";
       }
     }
@@ -49,6 +50,7 @@ class AuthMethods{
     }
     return result;
   }
+
 
 // logigng in user
 Future<String> loginUser({
@@ -70,4 +72,5 @@ Future<String> loginUser({
     }
     return result;
 }
+
 }
