@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:finaltask/resources/auth_methods.dart';
 import 'package:finaltask/utils/colors.dart';
@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
    );
 
    if(result=="success"){
-     
+     Navigator.pushNamed(context, 'home');
    }else{
     showSnackBar(result, context);
    }
@@ -108,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                  child: Text("Don't have and account?"),
+                  child: const Text("Don't have and account?"),
                   padding: const EdgeInsets.symmetric(
                     vertical: 8,
                   ),
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     } ,
                     child: Container(
-                      child: Text(
+                      child: const Text(
                         "Sign up.",
                         style:TextStyle(
                         fontWeight: FontWeight.bold,
