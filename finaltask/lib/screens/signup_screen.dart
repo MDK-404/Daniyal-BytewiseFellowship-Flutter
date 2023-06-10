@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../responsives/mobile_screen_layout.dart';
+import '../responsives/web_screen_layout.dart';
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
@@ -57,6 +60,8 @@ class _SignupScreenState extends State<SignupScreen> {
     });
     if(result!='success'){
       showSnackBar(result, context);
+    }else{
+      Navigator.pushNamed(context, 'responsive screen');
     }
 
 
@@ -154,15 +159,17 @@ class _SignupScreenState extends State<SignupScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  child: Text("Don't have and account?"),
+                  child: Text("Have an account?"),
                   padding: const EdgeInsets.symmetric(
                     vertical: 8,
                   ),
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, 'login');
+                  },
                   child: Container(
-                    child: Text("Sign up.",
+                    child: Text("Login.",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         )),

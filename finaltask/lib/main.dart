@@ -54,18 +54,22 @@ class MyApp extends StatelessWidget {
               }
             }
 
-            if(snapshot.connectionState==ConnectionState.waiting){
+            if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                   child: CircularProgressIndicator(
-                    color: primaryColor,
-                  )
-
-              );
+                color: primaryColor,
+              ));
             }
             return const LoginScreen();
           }),
       routes: {
         'home': (context) => HomeScreen(),
+        'signup': (context) => SignupScreen(),
+        'login': (context) => LoginScreen(),
+        'responsive screen': (context) => ResponsiveLayout(
+              webScreenLayout: WebScreenLayout(),
+              mobileScreenLayout: MobileScreenLayout(),
+            ),
       },
     );
   }

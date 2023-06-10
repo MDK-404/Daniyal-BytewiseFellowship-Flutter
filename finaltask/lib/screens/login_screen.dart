@@ -1,6 +1,9 @@
 
 
 import 'package:finaltask/resources/auth_methods.dart';
+import 'package:finaltask/responsives/mobile_screen_layout.dart';
+import 'package:finaltask/responsives/responsive_layout_screen.dart';
+import 'package:finaltask/responsives/web_screen_layout.dart';
 import 'package:finaltask/utils/colors.dart';
 import 'package:finaltask/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
    );
 
    if(result=="success"){
-     Navigator.pushNamed(context, 'home');
+     Navigator.pushNamed(context, 'responsive screen');
    }else{
     showSnackBar(result, context);
    }
@@ -115,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                   GestureDetector(
                     onTap:(){
-
+                      Navigator.pushNamed(context, 'signup');
                     } ,
                     child: Container(
                       child: const Text(
