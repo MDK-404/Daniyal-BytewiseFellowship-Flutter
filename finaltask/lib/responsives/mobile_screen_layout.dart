@@ -1,5 +1,6 @@
 
 import 'package:finaltask/utils/colors.dart';
+import 'package:finaltask/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -38,13 +39,7 @@ void onPageChanged(int page){
   Widget build(BuildContext context) {
     return Scaffold(
       body:PageView(
-        children: [
-              Text('Feed'),
-              Text('Search'),
-              Text('Add Post'),
-              Text('Noti'),
-              Text('Profie'),
-        ],
+        children: homeScreenItems,
         physics: NeverScrollableScrollPhysics(),
         controller: pageController,
         onPageChanged: onPageChanged,
