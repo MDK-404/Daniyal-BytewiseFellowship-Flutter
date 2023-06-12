@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:finaltask/utils/colors.dart';
 import 'package:finaltask/widgets/post_card.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,23 @@ class FeedScreen extends StatelessWidget {
           )
         ],
       ),
-      body:const PostCard(),
+      body:StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot){
+          if(snapshot.connectionState== ConnectionState.waiting){
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return ListView.builder(
+            itemCount: snapshot.data!.docs.length,
+            itemBuilder:(context, index)=>  PostCard(
+              snap: snapshot.data!.docs[index].data(),
+            ),
+          );
+
+        }
+      ),
     );
   }
 }
