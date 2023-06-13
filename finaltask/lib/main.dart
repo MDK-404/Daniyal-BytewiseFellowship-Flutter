@@ -1,4 +1,5 @@
 import 'package:finaltask/providers/user_provider.dart';
+import 'package:finaltask/screens/comments_screen.dart';
 import 'package:finaltask/screens/home_screen.dart';
 import 'package:finaltask/screens/login_screen.dart';
 import 'package:finaltask/screens/signup_screen.dart';
@@ -78,6 +79,9 @@ class MyApp extends StatelessWidget {
                 webScreenLayout: WebScreenLayout(),
                 mobileScreenLayout: MobileScreenLayout(),
               ),
+          'comments':(context)=> CommentScreen(
+            snap:['postId']
+          ),
         },
       ),
     );
