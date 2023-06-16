@@ -68,9 +68,14 @@ class _PostCardState extends State<PostCard> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        widget.snap['username'],
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, 'profile');
+                        },
+                        child: Text(
+                          widget.snap['username'],
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
                       )
                     ],
                   ),

@@ -2,6 +2,7 @@ import 'package:finaltask/providers/user_provider.dart';
 import 'package:finaltask/screens/comments_screen.dart';
 import 'package:finaltask/screens/home_screen.dart';
 import 'package:finaltask/screens/login_screen.dart';
+import 'package:finaltask/screens/profile_screen.dart';
 import 'package:finaltask/screens/signup_screen.dart';
 import 'package:finaltask/utils/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,6 +13,7 @@ import 'package:provider/provider.dart';
 import 'responsives/mobile_screen_layout.dart';
 import 'responsives/responsive_layout_screen.dart';
 import 'responsives/web_screen_layout.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -82,6 +84,7 @@ class MyApp extends StatelessWidget {
           'comments':(context)=> CommentScreen(
             snap:['postId']
           ),
+          'profile':(context)=>ProfileScreen(uid:'',)
         },
       ),
     );
