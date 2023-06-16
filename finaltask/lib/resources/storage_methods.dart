@@ -18,15 +18,16 @@ class StorageMethods{
      String id=const Uuid().v1();
       ref= ref.child(id);
    }
-   UploadTask uploadTask=ref.putData(file);
+   UploadTask uploadTask=ref.putData(
+       file
+   );
 
    TaskSnapshot snap= await uploadTask;
 
   String downloadUrl= await snap.ref.getDownloadURL();
   return downloadUrl;
 
-  String downlaodUrl= await snap.ref.getDownloadURL();
-  return downlaodUrl;
+
 
   }
 }
