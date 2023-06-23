@@ -1,3 +1,4 @@
+import 'package:finaltask/models/user.dart';
 import 'package:finaltask/providers/user_provider.dart';
 import 'package:finaltask/screens/comments_screen.dart';
 import 'package:finaltask/screens/home_screen.dart';
@@ -13,6 +14,7 @@ import 'package:provider/provider.dart';
 import 'responsives/mobile_screen_layout.dart';
 import 'responsives/responsive_layout_screen.dart';
 import 'responsives/web_screen_layout.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() async {
@@ -35,10 +37,12 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
 
   @override
   Widget build(BuildContext context) {
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -84,7 +88,8 @@ class MyApp extends StatelessWidget {
           'comments':(context)=> CommentScreen(
             snap:['postId']
           ),
-          'profile':(context)=>ProfileScreen(uid:'',)
+
+          'profile':(context)=>ProfileScreen(uid:  '',)
         },
       ),
     );
