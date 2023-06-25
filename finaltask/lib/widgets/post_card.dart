@@ -278,21 +278,21 @@ class _PostCardState extends State<PostCard> {
                 ),
 
 
-                InkWell(
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => CommentScreen(
-                      snap: widget.snap,
-                    ),
-                  )),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 4),
-                    child: Text(
-                      ' View all $commentLenght Comments',
-                      style:
-                          const TextStyle(fontSize: 16, color: secondaryColor),
-                    ),
-                  ),
-                ),
+                // InkWell(
+                //   onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                //     builder: (context) => CommentScreen(
+                //       snap: widget.snap,
+                //     ),
+                //   )),
+                //   child: Container(
+                //     padding: EdgeInsets.symmetric(vertical: 4),
+                //     child: Text(
+                //       ' View all $commentLenght Comments',
+                //       style:
+                //           const TextStyle(fontSize: 16, color: secondaryColor),
+                //     ),
+                //   ),
+                // ),
                 Container(
                   padding: EdgeInsets.symmetric(vertical: 4),
                   child: Text(
