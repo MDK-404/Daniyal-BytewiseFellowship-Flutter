@@ -1,6 +1,6 @@
 # finaltask
 
-A new Flutter project.
+This is the Final Project of my Flutter Fellowship at Bytewise. I made an Instagram clone with firebase as backend
 
 ## Getting Started
 
